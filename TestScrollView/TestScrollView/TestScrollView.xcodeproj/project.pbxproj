@@ -286,6 +286,7 @@
 				DEVELOPMENT_TEAM = N9NR9N6DGU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestScrollView/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Предоставьте доступ к фото";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -313,6 +314,7 @@
 				DEVELOPMENT_TEAM = N9NR9N6DGU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestScrollView/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Предоставьте доступ к фото";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

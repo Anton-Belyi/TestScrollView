@@ -6,6 +6,7 @@
 //
 import Stevia
 import UIKit
+import PhotosUI
 
 class ViewController: UIViewController {
     
@@ -37,9 +38,6 @@ class ViewController: UIViewController {
         
         scrollView.contentInsetAdjustmentBehavior = .never
 
-        let bounds = UIScreen.main.bounds
-        let height = bounds.size.height
-        
         contentView.fillContainer()
         contentView.Width == scrollView.Width
         contentView.Height >= scrollView.Height
@@ -58,5 +56,49 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .darkGray
+        
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if PHPhotoLibrary.authorizationStatus(for: .readWrite) == .limited {
+            print("Access limited")
+        }
+    
+        
+        switch PHPhotoLibrary.authorizationStatus(for: .readWrite) {
+        case .notDetermined:
+            print("access") // ask for access
+        case .restricted, .denied:
+            print("access") // sorry
+        case .authorized:
+            print("access")  // we have full access
+         
+        // new option:
+        case .limited:
+            print("access") // we only got access to some photos of library
+        @unknown default:
+            fatalError()
+        }
+        
+        
+//        PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
+//            switch status {
+//            case .notDetermined:
+//                print("access") // The user hasn't determined this app's access.
+//            case .restricted:
+//                print("access")// The system restricted this app's access.
+//            case .denied:
+//                print("access")// The user explicitly denied this app's access.
+//            case .authorized:
+//                print("access")// The user authorized this app to access Photos data.
+//            case .limited:
+//                print("access")// The user authorized this app for limited Photos access.
+//            @unknown default:
+//                fatalError()
+//            }
+//        }
     }
 }
